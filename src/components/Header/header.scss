@@ -1,0 +1,18 @@
+$base: #263C97;
+$color: #fff;
+
+
+#header{
+    background-color: $base;
+    color: $color;
+    .topNav{
+        display: flex;
+        justify-content: space-between;
+        .left{
+            width: 25%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
