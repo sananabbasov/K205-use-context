@@ -2,17 +2,51 @@ $base: #263C97;
 $color: #fff;
 
 
-#header{
+#header {
     background-color: $base;
     color: $color;
-    .topNav{
+
+    .topNav {
         display: flex;
         justify-content: space-between;
-        .left{
-            width: 25%;
+        width: 90%;
+        margin: auto;
+
+        .left {
             display: flex;
             justify-content: space-between;
+
+            .language {
+                margin-right: 15px;
+                display: flex;
+                .langArea {
+                    display: inline;
+                    .language-list {
+                        position: absolute;
+                        display: none;
+                        &.active{
+                            display: block;
+                        }
+                        background-color: red;
+                        padding: 0;
+                        li {
+                            list-style: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        .right {
+            ul {
+                display: flex;
+                justify-content: space-around;
+
+                li {
+                    list-style: none;
+                    padding: 3px 5px;
+                }
+            }
         }
     }
 }
-
