@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { BASE_URL } from '../../api/config';
 import '../Product/product.scss'
-function Product({cat}) {
+import { CartContext, useContext } from '../../context/MyContext'
+function Product({ cat }) {
 
     const [data, setData] = useState([]);
 
+    const {cartCount,setCartCount} = useContext(CartContext);
+
 
     const product = () => {
-        fetch(BASE_URL+'products/' + cat)
+        fetch(BASE_URL + 'products/' + cat)
             .then(e => e.json())
             .then(res => setData(res))
     }
@@ -16,6 +19,16 @@ function Product({cat}) {
     useEffect(() => {
         product()
     }, [cat])
+
+    const cartHandle = (id) =>{
+
+        const pro = ['Telefon', 500, 2]
+
+        setCartCount(cartCount+" "+pro);
+       
+    
+      }
+    
 
     return (
         <section id='product'>
@@ -34,6 +47,9 @@ function Product({cat}) {
                                         <p>
 
                                         </p>
+                                    </div>
+                                    <div className="cart-footer">
+                                    <div onClick={e => cartHandle(item.id)} className="btn btn-outline-success">Add to cart</div>
                                     </div>
                                 </div>
                             </div>

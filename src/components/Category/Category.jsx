@@ -22,7 +22,7 @@ function Category() {
             <ul className='list-group'>
                 {
                     category.map(e => (
-                        <Link to={"category/"+e}>
+                        <Link key={e} to={"category/"+e}>
                             <li key={Math.floor(Math.random() * 1000000000)} className='list-group-item'>{e}</li>
                         </Link>
                     ))

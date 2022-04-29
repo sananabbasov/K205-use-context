@@ -1,12 +1,23 @@
+import { useState } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import { CartContext } from './context/MyContext';
 import MyRouter from './routes/MyRouter';
 
 function App() {
+
+  const [cartCount, setCartCount] = useState(0)
+
+  const data ={
+    cartCount,
+    setCartCount
+  }
+
+  
+
   return (
     <div className="App">
-      <CartContext.Provider value={"0"}>
+      <CartContext.Provider value={data}>
         <Header />
         <MyRouter />
       </CartContext.Provider>

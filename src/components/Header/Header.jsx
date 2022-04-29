@@ -2,19 +2,24 @@ import React, { useState } from 'react'
 import '../Header/header.scss'
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import { Link } from 'react-router-dom';
+import { CartContext, useContext } from '../../context/MyContext';
 
 
 function Header() {
 
     const [a,setActive] = useState('');
     const [data,setData] = useState('');
-  
+    
+
+    const {cartCount} = useContext(CartContext)
 
 
 const dropdown = () =>{
    a === 'active' ? setActive('') : setActive('active');
 }
 
+
+console.log(cartCount);
     return (
         <section id='header'>
             <div className="topNav">
@@ -27,6 +32,7 @@ const dropdown = () =>{
                                 <li>Azerbaycan</li>
                                 <li>Rus</li>
                                 <li>Ingilis</li>
+                                <li>Arabic</li>
                             </ul>
                         </div>
                     </div>
@@ -46,6 +52,7 @@ const dropdown = () =>{
                         <li>Order Tracking</li>
                         <li>Contact Us</li>
                         <li>FAQs</li>
+                        <li>Cart <sup>{cartCount}</sup></li>
                     </ul>
                 </div>
             </div>

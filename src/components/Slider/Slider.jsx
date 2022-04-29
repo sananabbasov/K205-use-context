@@ -22,7 +22,7 @@ function Slider() {
             <Swiper>
                 {
                     products.map(item => (
-                        <SwiperSlide>
+                        <SwiperSlide key={item.id}>
                             <Link to={"/detail/"+item.id}>
                                 <div className="row">
                                     <div className="col-lg-4">

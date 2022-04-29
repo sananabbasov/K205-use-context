@@ -1,8 +1,10 @@
 import React from 'react'
 
-function Cart({count}) {
+function Cart() {
   return (
-    <div>{count}</div>
+    <div>
+      <button className='btn btn-outline-success'>Add to card</button>
+    </div>
   )
 }
 
