@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../Header/header.scss'
 import AddBoxIcon from '@mui/icons-material/AddBox';
+import { Link } from 'react-router-dom';
 
 
 function Header() {
@@ -36,7 +37,12 @@ const dropdown = () =>{
                 </div>
                 <div className="right">
                     <ul>
-                        <li>About Us</li>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/about">About Us</Link>
+                        </li>
                         <li>Order Tracking</li>
                         <li>Contact Us</li>
                         <li>FAQs</li>

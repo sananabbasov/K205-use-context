@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
-
-function Product() {
+import { BASE_URL } from '../../api/config';
+import '../Product/product.scss'
+function Product({cat}) {
 
     const [data, setData] = useState([]);
 
+
     const product = () => {
-        fetch('https://fakestoreapi.com/products')
+        fetch(BASE_URL+'products/' + cat)
             .then(e => e.json())
             .then(res => setData(res))
     }
@@ -13,7 +15,7 @@ function Product() {
 
     useEffect(() => {
         product()
-    }, [])
+    }, [cat])
 
     return (
         <section id='product'>

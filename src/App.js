@@ -1,12 +1,15 @@
 import './App.css';
 import Header from './components/Header/Header';
-import Product from './components/Product/Product';
+import { CartContext } from './context/MyContext';
+import MyRouter from './routes/MyRouter';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Product />
+      <CartContext.Provider value={"0"}>
+        <Header />
+        <MyRouter />
+      </CartContext.Provider>
     </div>
   );
 }
