@@ -6,14 +6,14 @@ import MyRouter from './routes/MyRouter';
 
 function App() {
 
-  const [cartCount, setCartCount] = useState(0)
+  const [cartCount, setCartCount] = useState([])
 
-  const data ={
+  const data = {
     cartCount,
     setCartCount
   }
 
-  
+
 
   return (
     <div className="App">

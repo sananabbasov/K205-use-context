@@ -19,7 +19,6 @@ const dropdown = () =>{
 }
 
 
-console.log(cartCount);
     return (
         <section id='header'>
             <div className="topNav">
@@ -52,7 +51,7 @@ console.log(cartCount);
                         <li>Order Tracking</li>
                         <li>Contact Us</li>
                         <li>FAQs</li>
-                        <li>Cart <sup>{cartCount}</sup></li>
+                        <li><Link to="/checkout">Cart </Link></li>
                     </ul>
                 </div>
             </div>

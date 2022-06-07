@@ -5,8 +5,9 @@ import { CartContext, useContext } from '../../context/MyContext'
 function Product({ cat }) {
 
     const [data, setData] = useState([]);
+    const [cartData, setCartData] = useState([])
 
-    const {cartCount,setCartCount} = useContext(CartContext);
+    const {setCartCount} = useContext(CartContext);
 
 
     const product = () => {
@@ -18,18 +19,24 @@ function Product({ cat }) {
 
     useEffect(() => {
         product()
-    }, [cat])
+      setCartCount([...cartData]);
+    }, [cat,cartData])
 
-    const cartHandle = (id) =>{
+    const cartHandle = (id,name,price,image) =>{
 
-        const pro = ['Telefon', 500, 2]
-
-        setCartCount(cartCount+" "+pro);
-       
-    
+        // key: value
+        const prod = {
+            id: id,
+            ad: name,
+            price: price,
+            image: image
+        }
+        setCartData([...cartData,prod])
       }
-    
 
+
+
+    
     return (
         <section id='product'>
             <div className="container">
@@ -49,7 +56,7 @@ function Product({ cat }) {
                                         </p>
                                     </div>
                                     <div className="cart-footer">
-                                    <div onClick={e => cartHandle(item.id)} className="btn btn-outline-success">Add to cart</div>
+                                    <div onClick={e => cartHandle(item.id,item.title,item.price,item.image)} className="btn btn-outline-success">Add to cart</div>
                                     </div>
                                 </div>
                             </div>
